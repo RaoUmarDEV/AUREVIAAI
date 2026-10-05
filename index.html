@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AUREVIA AI — Learn Beyond Limits</title>
+  <meta name="description" content="AUREVIA AI turns lectures, images and topics into intelligent study sessions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="orb orb-a"></div>
+  <div class="orb orb-b"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#">
+      <span class="brand-mark">A</span>
+      <span>
+        <b>AUREVIA</b>
+        <small>AI LEARNING</small>
+      </span>
+    </a>
+    <nav>
+      <a href="#workspace">Workspace</a>
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+    </nav>
+    <button class="nav-cta" onclick="document.querySelector('#workspace').scrollIntoView({behavior:'smooth'})">Start Learning <span>↗</span></button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span></span> INTELLIGENT STUDY, REIMAGINED</div>
+        <h1>Turn any lecture into a <em>masterclass.</em></h1>
+        <p>Upload your lecture, drop a picture, or simply name a topic. AUREVIA transforms it into clear explanations, smart revision notes, quizzes and an AI tutor — in your language.</p>
+        <div class="hero-actions">
+          <button class="primary-btn" onclick="document.querySelector('#workspace').scrollIntoView({behavior:'smooth'})">Enter the learning studio <span>→</span></button>
+          <span class="trust"><i>✦</i> Built for serious learners</span>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="card-glow"></div>
+        <div class="mini-top"><span>AI STUDY SESSION</span><b>LIVE</b></div>
+        <div class="lesson-preview">
+          <span class="lesson-icon">✦</span>
+          <div>
+            <small>ACTIVE TOPIC</small>
+            <strong>Central Nervous System</strong>
+          </div>
+        </div>
+        <div class="progress-row"><span>Understanding</span><b>82%</b></div>
+        <div class="progress"><i style="width:82%"></i></div>
+        <div class="preview-grid">
+          <div><span>◈</span><b>Key concepts</b><small>12 extracted</small></div>
+          <div><span>◇</span><b>Revision</b><small>Ready</small></div>
+          <div><span>△</span><b>Quiz</b><small>10 questions</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="workspace" class="workspace section">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow"><span></span> LEARNING STUDIO</div>
+          <h2>Bring your lecture.<br><em>We'll do the rest.</em></h2>
+        </div>
+        <p>Choose a source, select your language and let AUREVIA build your personalised study session.</p>
+      </div>
+
+      <div class="studio">
+        <aside class="source-panel">
+          <div class="panel-title"><span>01</span> YOUR SOURCE</div>
+
+          <div class="source-tabs">
+            <button class="source-tab active" data-mode="topic">Topic</button>
+            <button class="source-tab" data-mode="file">Lecture file</button>
+            <button class="source-tab" data-mode="image">Lecture image</button>
+          </div>
+
+          <div id="topicSource" class="source-view active">
+            <label>What are you studying?</label>
+            <textarea id="topicInput" placeholder="e.g. Photosynthesis, Cell Division, Newton's Laws..."></textarea>
+          </div>
+
+          <div id="fileSource" class="source-view">
+            <label>Upload your lecture</label>
+            <label class="dropzone" for="fileInput">
+              <span class="upload-icon">↑</span>
+              <strong>Drop your lecture here</strong>
+              <small>TXT, MD, PDF or DOCX</small>
+              <input id="fileInput" type="file" accept=".txt,.md,.pdf,.docx">
+              <b id="fileName">Choose a file</b>
+            </label>
+          </div>
+
+          <div id="imageSource" class="source-view">
+            <label>Upload lecture picture</label>
+            <label class="dropzone image-drop" for="imageInput">
+              <span class="upload-icon">◫</span>
+              <strong>Drop a clear lecture photo</strong>
+              <small>JPG, PNG or WEBP</small>
+              <input id="imageInput" type="file" accept="image/png,image/jpeg,image/webp">
+              <b id="imageName">Choose an image</b>
+            </label>
+            <img id="imagePreview" class="image-preview" alt="Lecture preview">
+          </div>
+
+          <div class="settings-row">
+            <div>
+              <label for="language">TEACH ME IN</label>
+              <select id="language">
+                <option>English</option>
+                <option>Urdu</option>
+                <option>Arabic</option>
+                <option>French</option>
+                <option>Chinese</option>
+                <option>Japanese</option>
+                <option>Korean</option>
+                <option>Spanish</option>
+              </select>
+            </div>
+            <div>
+              <label for="mode">LEARNING MODE</label>
+              <select id="mode">
+                <option value="detailed">Deep Lesson</option>
+                <option value="revision">Quick Revision</option>
+                <option value="exam">Exam Prep</option>
+              </select>
+            </div>
+          </div>
+
+          <button id="startBtn" class="primary-btn full">Create my lesson <span>→</span></button>
+          <p class="secure-note">⌁ Your AI key stays on the server. Never place secrets in GitHub Pages.</p>
+        </aside>
+
+        <section class="lesson-panel">
+          <div id="emptyState" class="empty-state">
+            <div class="empty-symbol">✦</div>
+            <h3>Your lesson will appear here.</h3>
+            <p>Give AUREVIA a topic, lecture or image. Your study workspace will be generated here.</p>
+            <div class="empty-chips"><span>Explain simply</span><span>Key points</span><span>Quiz me</span><span>Ask anything</span></div>
+          </div>
+
+          <div id="lessonState" class="lesson-state hidden">
+            <div class="lesson-header">
+              <div>
+                <span class="status-pill">AI LESSON</span>
+                <h3 id="lessonTitle">Your lesson</h3>
+              </div>
+              <button id="newLesson" class="ghost-btn">＋ New session</button>
+            </div>
+            <div id="lessonContent" class="lesson-content"></div>
+
+            <div class="quick-tools">
+              <button data-action="summary">✦ Summarise</button>
+              <button data-action="quiz">△ Quiz me</button>
+              <button data-action="flashcards">◇ Flashcards</button>
+            </div>
+
+            <div class="chat-box">
+              <div class="chat-heading"><span>✦</span><div><b>Ask AUREVIA</b><small>Your personal AI tutor</small></div></div>
+              <div id="chatMessages" class="chat-messages"></div>
+              <div class="chat-input-row">
+                <input id="chatInput" placeholder="Ask anything about this lecture...">
+                <button id="chatBtn">↑</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="features" class="features section">
+      <div class="section-heading centered">
+        <div class="eyebrow"><span></span> ONE STUDIO. MANY WAYS TO LEARN <span></span></div>
+        <h2>Designed to make <em>understanding</em> effortless.</h2>
+      </div>
+      <div class="feature-grid">
+        <article><span>01</span><h3>Deep explanations</h3><p>Turn difficult academic material into structured, understandable lessons without losing the important details.</p></article>
+        <article><span>02</span><h3>Visual lecture input</h3><p>Upload a picture of your handwritten or printed lecture and use it as the foundation for your study session.</p></article>
+        <article><span>03</span><h3>Revision engine</h3><p>Convert lessons into summaries, key concepts, exam points and fast revision material.</p></article>
+        <article><span>04</span><h3>AI tutor chat</h3><p>Ask follow-up questions naturally and keep the conversation focused on the lesson you're studying.</p></article>
+      </div>
+    </section>
+
+    <section id="about" class="manifesto">
+      <div class="manifesto-inner">
+        <div class="eyebrow"><span></span> THE AUREVIA STANDARD</div>
+        <h2>Learn with clarity.<br><em>Revise with confidence.</em></h2>
+        <p>AUREVIA is built around one idea: technology should make learning feel more human, not more complicated.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand"><span class="brand-mark">A</span><span><b>AUREVIA</b><small>AI LEARNING</small></span></div>
+    <span>© 2026 AUREVIA AI. Learn beyond limits.</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
